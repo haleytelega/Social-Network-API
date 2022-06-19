@@ -73,7 +73,7 @@ const userController = {
     },
 
     //delete a user
-    deleteUser({ params}, res) {
+    deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id})
         .then(user => {
             if (!user) {
@@ -83,6 +83,15 @@ const userController = {
         res.json(user);
         })
         .catch(err => res.status(400).json(err));
+    },
+
+    deleteFriend({ params }, res) {
+        User.findOneAndUpdate(
+        { _id: params.userId },
+        { $pull: {friends: params.friendId } }
+        )
+        .then(user => res.json(user))
+        .catch(err => res.json(err));
     }
 };
 
