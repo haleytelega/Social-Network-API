@@ -16,7 +16,7 @@
 - [License](#license)
 
   ## Installation
-  What are the steps required to install your project? MongoDB, Mongoose and Express.js
+  What are the steps required to install your project? MongoDB, Mongoose and Express.js and use Insomnia to test routes.
 
   ## Usage
   Provide instructions and examples for use: n/a
